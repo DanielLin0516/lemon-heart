@@ -8,12 +8,12 @@ import Register from '@/components/Register.vue'
 import Test from '@/components/Test.vue'
 import Home from '@/components/Home.vue'
 import ArticleHome from '../pages/ArticleHome'
+import Articlezhichang from '../pages/Articlezhichang'
 import Articlekepu from '../pages/Articlekepu'
-import Articlerenji from '../pages/Articlerenji'
-import Articleziwo from '../pages/Articleziwo'
-import Articlelianai from '../pages/Articlelianai'
-import Articlexueye from '../pages/Articlexueye'
+import Articlehunlian from '../pages/Articlehunlian'
 import Articlejiating from '../pages/Articlejiating'
+import Articlerenji from '../pages/Articlerenji'
+import Articlejuecha from '../pages/Articlejuecha'
 
 
 Vue.use(VueRouter)
@@ -38,28 +38,28 @@ const router = new VueRouter({
         component:ArticleHome,
       },
       {
+        path:'Articlezhichang',
+        component:Articlezhichang,
+      },
+      {
         path:'Articlekepu',
         component:Articlekepu,
+      },
+      {
+        path:'Articlehunlian',
+        component:Articlehunlian,
+      },
+      {
+        path:'Articlejiating',
+        component:Articlejiating,
       },
       {
         path:'Articlerenji',
         component:Articlerenji,
       },
       {
-        path:'Articleziwo',
-        component:Articleziwo,
-      },
-      {
-        path:'Articlelianai',
-        component:Articlelianai,
-      },
-      {
-        path:'Articlexueye',
-        component:Articlexueye,
-      },
-      {
-        path:'Articlejiating',
-        component:Articlejiating,
+        path:'Articlejuecha',
+        component:Articlejuecha,
       }
     ]
     },

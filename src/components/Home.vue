@@ -66,7 +66,7 @@
         <div class="Epilogue">
             <div class="words">
                 <div class="words1">心灵需要慰藉，就像花草需要水分</div>
-                <router-link to='/Article'>阅读精品文章</router-link>
+                <router-link to='/Article/ArticleHome'>阅读精品文章</router-link>
                 <i class="el-icon-arrow-right"></i>
             </div>
             <img class="Foots-up-img" src="@/assets/pictures/threecolors.png">
@@ -83,16 +83,16 @@
             </div>
             <div class="box1">
                 <div>
-                    <router-link to="/Article" >精选文章</router-link>
+                    <router-link to="/Article/ArticleHome" >精选文章</router-link>
                 </div>
                 <div>
-                    <router-link to="/Article" >心理科普</router-link>
+                    <router-link to="/Article/ArticleHome" >心理科普</router-link>
                 </div>
                 <div>
-                    <router-link to="/Article" >人际社交</router-link>
+                    <router-link to="/Article/ArticleHome" >人际社交</router-link>
                 </div>
                 <div>
-                    <router-link to="/Article" >恋爱关系</router-link>
+                    <router-link to="/Article/ArticleHome" >恋爱关系</router-link>
                 </div>
             </div>
             <div class="box2">
@@ -120,14 +120,14 @@
                     <router-link to="/Test" >人格测试</router-link>
                 </div>
             </div>
-            <class class="box4">
+            <div class="box4">
                 <div>
                     <router-link to="/Book" >心理图书</router-link>
                 </div>
                 <div>
                     <router-link to="/Book" >推荐图书</router-link>
                 </div>
-            </class>
+            </div>
         </div>
     </div>
 </template>

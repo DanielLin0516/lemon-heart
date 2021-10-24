@@ -48,37 +48,29 @@
         class="el-menu-demo"
         mode="horizontal"
         router
+        active-text-color="black"
       >
         <el-menu-item index="/Article/ArticleHome">全部</el-menu-item>
-        <el-menu-item index="/Article/Articlekepu">心理科谱</el-menu-item>
-        <el-menu-item index="/Article/Articlerenji">人际关系</el-menu-item>
-        <el-menu-item index="/Article/Articleziwo">自我情绪</el-menu-item>
-        <el-menu-item index="/Article/Articlelianai">恋爱关系</el-menu-item>
-        <el-menu-item index="/Article/Articlexueye">学业工作</el-menu-item>
+        <el-menu-item index="/Article/Articlezhichang">职场技能</el-menu-item>
+        <el-menu-item index="/Article/Articlekepu">心理科普</el-menu-item>
+        <el-menu-item index="/Article/Articlehunlian">婚恋情感</el-menu-item>
         <el-menu-item index="/Article/Articlejiating">家庭关系</el-menu-item>
+        <el-menu-item index="/Article/Articlerenji">人际社交</el-menu-item>
+        <el-menu-item index="/Article/Articlejuecha">自我觉察</el-menu-item>
       </el-menu>
     </div>
     <div class="router">
-        <router-view></router-view>
+
+        <router-view></router-view>      
+ 
+
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
 export default {
   name: "Article",
-  mounted() {
-      axios.get('http://39.107.67.145:9000/passage/listAll').then(
-        response =>{
-          this.$bus.$emit('getInf',response.data.data)
-          console.log('成功请求')
-        },
-        error => {
-          console.log('请求失败',error.message)
-        }
-      )
-  }
 };
 </script>
 
@@ -212,6 +204,7 @@ export default {
   position: relative;
   left: 259px;
   top: -80px;
+  display: inline-block;
 }
 
 </style>

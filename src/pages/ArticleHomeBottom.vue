@@ -134,7 +134,7 @@ span.xinli {
 }
 .line1 {
   position: relative;
-  top: 175px;
+  top: 178px;
   left: 373px;
   height: 180px;
   width: 0.6px;
@@ -145,10 +145,10 @@ span.xinli {
   color: rgba(0, 0, 0, 1);
   font-family: FZBaoSong-Z04S;
   font-size: 48px;
-  top: 21px;
+  top: 24px;
 }
 .ge {
-  top: 23px;
+  top: 26px;
   position: relative;
   left: 414px;
   font-size: 24px;
@@ -158,7 +158,7 @@ span.xinli {
 .xingge {
   position: relative;
   left: 340px;
-  top: 70px;
+  top: 74px;
   color: rgba(0, 0, 0, 1);
   font-family: FZBaoSong-Z04S;
   font-size: 18px;
@@ -169,7 +169,7 @@ span.xinli {
   width: 108px;
   height: 40px;
   border: 1px black solid;
-  left: 163px;
+  left: 175px;
 }
 .line2 {
   position: relative;
@@ -180,7 +180,7 @@ span.xinli {
 }
 .jiao {
   position: relative;
-  top: -208px;
+  top: -211px;
   left: 894px;
   width: 120px;
   height: 53px;
@@ -191,7 +191,7 @@ span.xinli {
 .lv {
   font-size: 24px;
   position: relative;
-  top: -206px;
+  top: -209px;
   left: 897px;
   color: rgba(0, 0, 0, 1);
   font-family: FZBaoSong-Z04S;
@@ -208,8 +208,8 @@ span.xinli {
 }
 .button2 {
   position: relative;
-  top: -110px;
-  left: 574px;
+  top: -115px;
+  left: 590px;
   width: 108px;
   height: 40px;
   border: 1px black solid;
@@ -217,14 +217,14 @@ span.xinli {
 .line3 {
   position: relative;
   left: 1335px;
-  top: -290px;
+  top: -295px;
   height: 180px;
   width: 0.6px;
 }
 .yi {
   position: relative;
   left: 1375px;
-  top: -442px;
+  top: -449px;
   width: 120px;
   height: 53px;
   color: rgba(0, 0, 0, 1);
@@ -233,7 +233,7 @@ span.xinli {
 }
 .yu {
   position: relative;
-  top: -438px;
+  top: -445px;
   left: 1378px;
   color: rgba(0, 0, 0, 1);
   font-family: FZBaoSong-Z04S;
@@ -241,7 +241,7 @@ span.xinli {
 }
 .zhuangtai {
   position: relative;
-  top: -393px;
+  top: -400px;
   width: 224px;
   height: 20px;
   color: rgba(0, 0, 0, 1);
@@ -251,11 +251,11 @@ span.xinli {
 }
 .button3 {
   position: relative;
-  top: -340px;
+  top: -351px;
   width: 108px;
   height: 40px;
   border: 1px black solid;
-  left: 1060px;
+  left: 1075px;
 }
 .gengduo a {
   text-decoration: underline;

@@ -76,7 +76,7 @@ export default {
 
 <style scoped>
 .pictures-top {
-  height: 1000px;
+  height: 950px;
   position: relative;
 }
 .square img {

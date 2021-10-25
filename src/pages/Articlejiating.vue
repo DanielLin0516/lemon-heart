@@ -60,7 +60,7 @@ import ArticleHomeBottom from "../pages/ArticleHomeBottom.vue";
 import NextPage1 from "../pages/NextPage1.vue";
 import "animate.css";
 export default {
-  name: "Articlezhichang",
+  name: "Articlejiating",
   components: { NextPage1, ArticleHomeBottom },
   data() {
     return {
@@ -97,16 +97,23 @@ export default {
   },
 };
 </script>
-
-<style scoped>
+<style>
+.div1{
+  width: 1620px;
+}
 .pictures {
   width: 100%;
   position: relative;
 }
 image multi-content {
-  width: 220px;
+  width: 300px;
 }
-
+ul.el-menu-demo.el-menu--horizontal.el-menu {
+    width:1200px;
+}
+.el-menu--horizontal>.el-menu-item{
+  width: 150px;
+}
 .el-card__body {
   display: flex;
 }
@@ -116,24 +123,27 @@ image multi-content {
   font-size: 24px;
   position: absolute;
   /* top: 21px; */
-  left: 256px;
+  left: 266px;
+  width: 600px;
+  height: 26px;
 }
 .passageSmallTitle {
   position: absolute;
   /* top: 100px; */
-  margin-top: 46px;
-  left: 256px;
+  margin-top: 50px;
+  left: 266px;
   color: rgba(0, 0, 0, 1);
   font-family: PingFang-ExtraLight-2;
   font-size: 20px;
   line-height: 130.765629%;
+  width: 800px;
 }
 .passageCategory {
   position: absolute;
-  margin-top: 131px;
+  margin-top: 167px;
   color: rgba(130, 130, 130, 1);
   font-family: PingFang-Regular;
   font-size: 18px;
-  left: 256px;
+  left: 266px;
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <div>
     <el-pagination
-      @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page="currentPage"
       :page-size="pageSize"

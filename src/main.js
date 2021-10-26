@@ -6,7 +6,8 @@ import '@/assets/styles/reset.css'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/assets/fonts/font.css'
-
+import lottie from 'vue-lottie'
+Vue.component('lottie',lottie)
 Vue.use(ElementUI);
 Vue.config.productionTip = false
 

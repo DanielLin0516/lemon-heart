@@ -30,7 +30,7 @@
           style="border: none; box-shadow: none"
         >
           <a href="">
-            <img :src="Info.passageImg" class="image multi-content" />
+            <img :src="Info.passageImg" class="image multi-content" style="width:11.5vw" />
           </a>
           <div style="padding: 14px">
             <a href="">
@@ -136,7 +136,7 @@ ul.el-menu-demo.el-menu--horizontal.el-menu {
   font-family: PingFang-ExtraLight-2;
   font-size: 20px;
   line-height: 130.765629%;
-  width: 800px;
+  width: 600px;
 }
 .passageCategory {
   position: absolute;

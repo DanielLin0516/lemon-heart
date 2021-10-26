@@ -130,7 +130,7 @@ ul.el-menu-demo.el-menu--horizontal.el-menu {
   font-family: PingFang-ExtraLight-2;
   font-size: 20px;
   line-height: 130.765629%;
-  width: 800px;
+  width: 600px;
 }
 .passageCategory {
   position: absolute;

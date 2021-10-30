@@ -29,18 +29,42 @@
           :key="Info.id"
           style="border: none; box-shadow: none"
         >
-          <a href="">
-            <img :src="Info.passageImg" class="image multi-content" style="width:11.5vw" />
-          </a>
+          <router-link
+            :to="{
+              name: 'PassageDetail',
+              query: {
+                passageCategory: Info.passageCategory,
+                passageTitle: Info.passageTitle,
+                passageContent: Info.passageContent,
+                id:Info.id
+              },
+            }"
+          >
+            <img
+              :src="Info.passageImg"
+              class="image multi-content"
+              style="width: 11.5vw"
+            />
+          </router-link>
           <div style="padding: 14px">
-            <a href="">
+            <router-link
+              :to="{
+                name: 'PassageDetail',
+                query: {
+                  passageCategory: Info.passageCategory,
+                  passageTitle: Info.passageTitle,
+                  passageContent: Info.passageContent,
+                  id:Info.id
+                },
+              }"
+            >
               <span class="passagetitle">
                 {{ Info.passageTitle }}
               </span>
               <span class="passageSmallTitle">
                 {{ Info.passageSmallTitle }}
               </span>
-            </a>
+            </router-link>
             <span class="passageCategory">
               {{ Info.passageCategory }}
             </span>
@@ -92,13 +116,13 @@ export default {
   },
   mounted() {
     this.$bus.$on("sendNewArray", (newArray) => {
-    this.pagenow = newArray;
+      this.pagenow = newArray;
     });
   },
 };
 </script>
 <style>
-.div1{
+.div1 {
   width: 1620px;
 }
 .pictures {
@@ -109,9 +133,9 @@ image multi-content {
   width: 300px;
 }
 ul.el-menu-demo.el-menu--horizontal.el-menu {
-    width:1200px;
+  width: 1200px;
 }
-.el-menu--horizontal>.el-menu-item{
+.el-menu--horizontal > .el-menu-item {
   width: 150px;
 }
 .el-card__body {

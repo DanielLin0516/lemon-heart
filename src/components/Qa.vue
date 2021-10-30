@@ -6,10 +6,9 @@
     v-on:animCreated="handleAnimation"
   />
 </template>
-
 <script>
 import Lottie from "vue-lottie";
-import * as animationData from "../anim/gift.json";
+const  animationData =  "../anim/data.json";
 export default {
   name: "Qa",
   components: {
@@ -27,6 +26,5 @@ export default {
   },
 };
 </script>
-
 <style>
 </style>

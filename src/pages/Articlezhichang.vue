@@ -29,18 +29,38 @@
           :key="Info.id"
           style="border: none; box-shadow: none"
         >
-          <a href="">
+          <router-link
+            :to="{
+              name: 'PassageDetail',
+              query: {
+                passageCategory: Info.passageCategory,
+                passageTitle: Info.passageTitle,
+                passageContent:Info.passageContent,
+                id:Info.id
+              },
+            }"
+          >
             <img :src="Info.passageImg" class="image multi-content" style="width:11.5vw"/>
-          </a>
+          </router-link>
           <div style="padding: 14px">
-            <a href="">
+          <router-link
+            :to="{
+              name: 'PassageDetail',
+              query: {
+                passageCategory: Info.passageCategory,
+                passageTitle: Info.passageTitle,
+                passageContent:Info.passageContent,
+                id:Info.id
+              },
+            }"
+          >
               <span class="passagetitle">
                 {{ Info.passageTitle }}
               </span>
               <span class="passageSmallTitle">
                 {{ Info.passageSmallTitle }}
               </span>
-            </a>
+            </router-link>
             <span class="passageCategory">
               {{ Info.passageCategory }}
             </span>

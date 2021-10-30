@@ -92,6 +92,7 @@
         leave-active-class="animate__bounceOutLeft"
       >
         <router-view></router-view>
+        <!-- <router-view name="zujianqiehuan"></router-view> -->
       </transition>
     </div>
   </div>
@@ -115,19 +116,20 @@ export default {
         document.documentElement.scrollTop || document.body.scrollTop;
       // 计算A区的高度
       let header_height = null;
-      let header_height1 = 2150;
+      let header_height1 = null;
       if (document.getElementsByClassName("pictures-top")[0]) {
         header_height =
           document.getElementsByClassName("pictures-top")[0].offsetHeight;
+        header_height1 = document.getElementsByClassName("white")[0].offsetTop +400
       }
-      /* console.log(
-        "滚动的距离:" + scrolled,
-        "头部的高度:" + header_height,
-        "下面的white高度:" + header_height1
-      ); */
+      //  console.log(
+      //   "滚动的距离:" + scrolled,
+      //   "头部的高度:" + header_height,
+      //   "下面的white高度:" + header_height1
+      // ); 
       // 当滚动的距离等于A区的高度的时候，即是临界点，马上通过auto_fixed变量，给B区添加一个
       // class，让B区浮起来
-      if (scrolled >= header_height - 150) {
+      if (scrolled >= header_height - 130) {
         if (scrolled <= header_height1) {
           this.yuanlaide = "houlai";
           // console.log("1");

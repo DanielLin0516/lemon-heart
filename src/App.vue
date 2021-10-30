@@ -23,12 +23,12 @@
         </el-col>
         <el-col :xs="2" :sm="2" :md="2" :lg="2" :xl="2">
           <div class="grid-content bg-purple qa">
-            <router-link to='/Qa'>问答</router-link>
+            <router-link to='/Question'>问答</router-link>
           </div>
         </el-col>
         <el-col :xs="4" :sm="2" :md="2" :lg="2" :xl="2">
           <div class="grid-content bg-purple test">
-            <router-link to='/Test'>心理测试</router-link>
+            <router-link :to="{name: 'Test' }">心理测试</router-link>
           </div>
         </el-col>
         <el-col :xs="4" :sm="2" :md="2" :lg="2" :xl="2">
@@ -65,6 +65,7 @@
   import Register from '@/components/Register.vue'
   import Test from '@/components/Test.vue'
   import Home from '@/components/Home.vue'
+  import PassgaeDetail from './components/PassageDetail.vue'
   export default {
     data() {
       return {
@@ -80,6 +81,7 @@
       Qa,
       Register,
       Test,
+      PassgaeDetail
     },
     methods: {
       ChangeColor(){

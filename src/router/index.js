@@ -14,7 +14,7 @@ import Articlehunlian from '../pages/Articlehunlian'
 import Articlejiating from '../pages/Articlejiating'
 import Articlerenji from '../pages/Articlerenji'
 import Articlejuecha from '../pages/Articlejuecha'
-
+import PassageDetail from '../components/PassageDetail'
 
 Vue.use(VueRouter)
 
@@ -32,6 +32,9 @@ const router = new VueRouter({
     {
       path:'/Article',
       component:Article,
+      // components:{
+      //   zujianqiehuan:ArticleHome
+      // },
       children:[
       {
         path:'ArticleHome',
@@ -72,6 +75,7 @@ const router = new VueRouter({
       component:Qa,
     },
     {
+      name:'Test',
       path:'Test',
       component:Test,
     },
@@ -82,6 +86,11 @@ const router = new VueRouter({
     {
       path:'Register',
       component:Register,
+    },
+    {
+      name:'PassageDetail',
+      path:'PassageDetail',
+      component:PassageDetail,
     }
   ]
 })

@@ -29,18 +29,42 @@
           :key="Info.id"
           style="border: none; box-shadow: none"
         >
-          <a href="" >
-            <img :src="Info.passageImg" class="image multi-content" style="width:11.5vw"/>
-          </a>
+          <router-link
+            :to="{
+              name: 'PassageDetail',
+              query: {
+                passageCategory: Info.passageCategory,
+                passageTitle: Info.passageTitle,
+                passageContent: Info.passageContent,
+                id:Info.id
+              },
+            }"
+          >
+            <img
+              :src="Info.passageImg"
+              class="image multi-content"
+              style="width: 11.5vw"
+            />
+          </router-link>
           <div style="padding: 14px">
-            <a href="">
+            <router-link
+              :to="{
+                name: 'PassageDetail',
+                query: {
+                  passageCategory: Info.passageCategory,
+                  passageTitle: Info.passageTitle,
+                  passageContent: Info.passageContent,
+                  id:Info.id
+                },
+              }"
+            >
               <span class="passagetitle">
                 {{ Info.passageTitle }}
               </span>
               <span class="passageSmallTitle">
                 {{ Info.passageSmallTitle }}
               </span>
-            </a>
+            </router-link>
             <span class="passageCategory">
               {{ Info.passageCategory }}
             </span>
@@ -55,7 +79,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 import ArticleHomeBottom from "../pages/ArticleHomeBottom.vue";
 import NextPage from "../pages/NextPage.vue";
 import "animate.css";
@@ -71,28 +95,28 @@ export default {
     };
   },
 
-  created(){
-    axios.get('http://39.107.67.145:9000/passage/listAllByPage').then(
-        response =>{
-          console.log('成功请求',response.data)
-          this.$bus.$emit("getInf",response.data)
-          this.loading = false;
-          this.Inf = response.data.data.records;
-        },
-        error => {
-          console.log('请求失败',error.message)
-        }
-      )    
-      this.$bus.$on("sendpage", (Inf) => {
-        this.Inf = Inf.records;
-        this.total = Inf.pages;
-      });
+  created() {
+    axios.get("http://39.107.67.145:9000/passage/listAllByPage").then(
+      (response) => {
+        console.log("成功请求", response.data);
+        this.$bus.$emit("getInf", response.data);
+        this.loading = false;
+        this.Inf = response.data.data.records;
+      },
+      (error) => {
+        console.log("请求失败", error.message);
+      }
+    );
+    this.$bus.$on("sendpage", (Inf) => {
+      this.Inf = Inf.records;
+      this.total = Inf.pages;
+    });
   },
 };
 </script>
 
 <style>
-.div1{
+.div1 {
   width: 1620px;
 }
 .pictures {
@@ -103,9 +127,9 @@ image multi-content {
   width: 300px;
 }
 ul.el-menu-demo.el-menu--horizontal.el-menu {
-    width:1200px;
+  width: 1200px;
 }
-.el-menu--horizontal>.el-menu-item{
+.el-menu--horizontal > .el-menu-item {
   width: 150px;
 }
 .el-card__body {

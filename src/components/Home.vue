@@ -13,7 +13,7 @@
             <div class="block1">
                 <span class="num">01</span>
                 <span class="link1">
-                    <router-link to='/Article'>心理科普</router-link>
+                    <router-link to='/Article/ArticleHome'>心理科普</router-link>
                 </span>
                 <span class="line1"></span>
                 <div class="test1">
@@ -26,7 +26,7 @@
             <div class="block2">
                 <span class="num">02</span>
                 <span class="link1">
-                    <router-link to='/Article'>常见问题</router-link>
+                    <router-link to='/Article/ArticleHome'>常见问题</router-link>
                 </span>
                 <span class="line1"></span>
                 <div class="test1">

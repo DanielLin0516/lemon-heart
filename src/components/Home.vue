@@ -52,7 +52,7 @@
             <div class="block4">
                 <span class="num">04</span>
                 <span class="link1">
-                    <router-link to='/Test'>心理测试</router-link>
+                    <router-link :to="{name: 'Test' }">心理测试</router-link>
                 </span>
                 <span class="line1"></span>
                 <div class="test1">
@@ -108,16 +108,16 @@
             </div>
             <div class="box3">
                 <div>
-                    <router-link to="/Test" >心理测试</router-link>
+                    <router-link :to="{name: 'Test' }" >心理测试</router-link>
                 </div>
                 <div>
-                    <router-link to="/Test" >焦虑度测试</router-link>
+                    <router-link :to="{name: 'Test' }" >焦虑度测试</router-link>
                 </div>
                 <div>
-                    <router-link to="/Test" >自卑度测试</router-link>
+                    <router-link :to="{name: 'Test' }" >自卑度测试</router-link>
                 </div>
                 <div>
-                    <router-link to="/Test" >人格测试</router-link>
+                    <router-link :to="{name: 'Test' }" >人格测试</router-link>
                 </div>
             </div>
             <div class="box4">
@@ -134,7 +134,10 @@
 
 <script>
     export default {
-        name:'Home'
+        name:'Home',
+        mounted() {
+            window.scrollTo(0,0)
+        },
     }
 </script>
 

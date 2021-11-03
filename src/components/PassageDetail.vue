@@ -49,7 +49,7 @@
               passageCategory: Infs.passageCategory,
               passageTitle: Infs.passageTitle,
               passageContent: Infs.passageContent,
-              id:Infs.id  
+              id: Infs.id,
             },
           }"
           >{{ Infs.passageTitle }}</router-link
@@ -77,19 +77,19 @@ export default {
     clear() {
       this.content = this.$route.query.passageContent.split("。");
       axios
-      .get("http://39.107.67.145:9000/passage/pressLike", {
-        params: {
-          id: this.$route.query.id,
-        },
-      })
-      .then(
-        (response) => {
-          this.n = response.data.data;
-        },
-        (error) => {
-          console.log("请求失败", error);
-        }
-      );
+        .get("http://39.107.67.145:9000/passage/pressLike", {
+          params: {
+            id: this.$route.query.id,
+          },
+        })
+        .then(
+          (response) => {
+            this.n = response.data.data;
+          },
+          (error) => {
+            console.log("请求失败", error);
+          }
+        );
     },
     getrandom() {
       axios.get("http://39.107.67.145:9000/passage/listAllByPage").then(
@@ -180,6 +180,7 @@ export default {
     this.$nextTick(function () {
       window.addEventListener("scroll", this.onScroll);
     });
+    window.scrollTo(0,0);
   },
   created() {
     axios
@@ -329,6 +330,7 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  cursor: pointer;
 }
 .dianzan:hover {
   background-color: rgba(71, 71, 71, 1);

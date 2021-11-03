@@ -66,6 +66,8 @@
   import Test from '@/components/Test.vue'
   import Home from '@/components/Home.vue'
   import PassgaeDetail from './components/PassageDetail.vue'
+  import Rengetest from './pages/Rengetest'
+  import Rengeresult from './pages/Rengeresult.vue'
   export default {
     data() {
       return {
@@ -81,7 +83,9 @@
       Qa,
       Register,
       Test,
-      PassgaeDetail
+      PassgaeDetail,
+      Rengetest,
+      Rengeresult
     },
     methods: {
       ChangeColor(){

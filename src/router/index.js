@@ -15,6 +15,8 @@ import Articlejiating from '../pages/Articlejiating'
 import Articlerenji from '../pages/Articlerenji'
 import Articlejuecha from '../pages/Articlejuecha'
 import PassageDetail from '../components/PassageDetail'
+import Rengetest from '../pages/Rengetest.vue'
+import Rengeresult from '../pages/Rengeresult.vue'
 
 Vue.use(VueRouter)
 
@@ -37,6 +39,7 @@ const router = new VueRouter({
       // },
       children:[
       {
+        
         path:'ArticleHome',
         component:ArticleHome,
       },
@@ -91,6 +94,16 @@ const router = new VueRouter({
       name:'PassageDetail',
       path:'PassageDetail',
       component:PassageDetail,
+    },
+    {
+      name:'Rengetest',
+      path:'Rengetest',
+      component:Rengetest,
+    },
+    {
+      name:'Rengeresult',
+      path:'Rengeresult',
+      component:Rengeresult,
     }
   ]
 })

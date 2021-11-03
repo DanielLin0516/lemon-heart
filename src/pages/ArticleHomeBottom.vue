@@ -14,7 +14,7 @@
         <span class="ge">格</span>
         <span class="xingge">看看你属于哪种性格</span>
         <el-button class="button1" size="small" round>
-          <div><router-link to="/Test">去测试</router-link></div>
+          <div><router-link :to="{name: 'Test' }">去测试</router-link></div>
         </el-button>
         <div>
           <img class="line2" src="..\assets\pictures\line1.png" alt="" />
@@ -23,7 +23,7 @@
         <span class="lv">虑测试</span>
         <span class="rensheng">别让焦虑摧毁你的人生</span>
         <el-button class="button2" size="small" round>
-          <div><router-link to="/Test">去测试</router-link></div>
+          <div><router-link :to="{name: 'Test' }">去测试</router-link></div>
         </el-button>
         <div>
           <img class="line3" src="..\assets\pictures\line1.png" alt="" />
@@ -32,11 +32,11 @@
         <span class="yu">郁测试</span>
         <span class="zhuangtai">测测你的抑郁情绪状态</span>
         <el-button class="button3" size="small" round>
-          <div><router-link to="/Test">去测试</router-link></div>
+          <div><router-link :to="{name: 'Test' }">去测试</router-link></div>
         </el-button>
       </div>
       <div class="gengduo">
-        <router-link to="/Test">更多心理测试</router-link>
+        <router-link :to="{name: 'Test' }">更多心理测试</router-link>
         <i class="el-icon-arrow-right"></i>
       </div>
     </div>
@@ -76,16 +76,16 @@
       </div>
       <div class="box3">
         <div>
-          <router-link to="/Test">心理测试</router-link>
+          <router-link :to="{name: 'Test' }">心理测试</router-link>
         </div>
         <div>
-          <router-link to="/Test">焦虑度测试</router-link>
+          <router-link :to="{name: 'Test' }">焦虑度测试</router-link>
         </div>
         <div>
-          <router-link to="/Test">自卑度测试</router-link>
+          <router-link :to="{name: 'Test' }">自卑度测试</router-link>
         </div>
         <div>
-          <router-link to="/Test">人格测试</router-link>
+          <router-link :to="{name: 'Test' }">人格测试</router-link>
         </div>
       </div>
       <div class="box4">
@@ -101,7 +101,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name:'ArticleHomeBottom',
+};
 </script>
 
 <style scoped>

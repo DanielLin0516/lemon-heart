@@ -129,7 +129,7 @@ export default {
       // ); 
       // 当滚动的距离等于A区的高度的时候，即是临界点，马上通过auto_fixed变量，给B区添加一个
       // class，让B区浮起来
-      if (scrolled >= header_height - 130) {
+      if (scrolled >= header_height - 100) {
         if (scrolled <= header_height1) {
           this.yuanlaide = "houlai";
           // console.log("1");
@@ -154,9 +154,6 @@ export default {
       console.log('请求失败next',error)
     })
   },
-  created(){
-    
-  }
 };
 </script>
 

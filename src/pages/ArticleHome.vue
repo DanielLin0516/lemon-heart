@@ -111,7 +111,9 @@ export default {
       this.Inf = Inf.records;
       this.total = Inf.pages;
     });
+    
   },
+  
 };
 </script>
 

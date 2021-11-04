@@ -49,10 +49,10 @@
       </div>
       <div class="box4">
         <div>
-          <router-link to="/Book">心理图书</router-link>
+          <router-link :to="{name:'Book'}">心理图书</router-link>
         </div>
         <div>
-          <router-link to="/Book">推荐图书</router-link>
+          <router-link :to="{name:'Book'}">推荐图书</router-link>
         </div>
       </div>
     </div>

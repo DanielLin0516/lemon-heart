@@ -33,7 +33,7 @@
         </el-col>
         <el-col :xs="4" :sm="2" :md="2" :lg="2" :xl="2">
           <div class="grid-content bg-purple book">
-            <router-link to='/Book'>心理图书</router-link>
+            <router-link :to="{name:'Book'}">心理图书</router-link>
           </div>
         </el-col>
         <el-col :xs="2" :sm="1" :md="1" :lg="1" :xl="1">

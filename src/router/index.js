@@ -70,6 +70,7 @@ const router = new VueRouter({
     ]
     },
     {
+      name:'Book',
       path:'Book',
       component:Book,
     },

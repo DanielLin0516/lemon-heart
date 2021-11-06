@@ -135,8 +135,8 @@
 
   #date {
     position: absolute;
-    top: 58px;
-    left: 110px;
+    top: 56px;
+    left: 120px;
     color: rgba(97, 97, 97, 1);
     font-family: PingFang SC;
     font-size: 14px;
@@ -254,5 +254,9 @@
     line-height: 150%;
     text-align: center;
     padding-top: 5px;
+  }
+  button:hover{
+    background-color: black;
+    color: white;
   }
 </style>

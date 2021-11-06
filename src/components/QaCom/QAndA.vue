@@ -112,7 +112,7 @@
 
   #aTitle {
     position: relative;
-    left: 262px;
+    margin-left: 262px;
     top: 100px;
     color: rgba(71, 71, 71, 1);
     font-family: PingFang SC;
@@ -122,7 +122,7 @@
 
   #aNum {
     position: relative;
-    left: 450px;
+    margin-left: 450px;
     top: 55px;
     color: rgba(130, 130, 130, 1);
     font-family: PingFang SC;
@@ -138,16 +138,16 @@
   }
 
   #toAsk {
-    position: fixed;
-    top: 260px;
+    // position: fixed;
+    top: -700px;
     left: 1400px;
     width: 200px;
     z-index: 99;
   }
 
   #relative {
-    position: fixed;
-    top: 560px;
+    position: relative;
+    top: -500px;
     left: 1400px;
     width: 200px;
     z-index: 99;

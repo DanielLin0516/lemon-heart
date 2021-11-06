@@ -16,7 +16,7 @@
       ></video>
       </transition>
 
-      <button class="close" @click="turndown" v-show="one">关闭</button>
+      <button class="close" @click="turndown" v-show="one"><img src="../..\assets\pictures\Group 189.png" alt=""></button>
     </div>
     <div v-show="!one">
       <div class="middle">
@@ -169,14 +169,19 @@ video.up {
   top: 0px;
 }
 .close {
-  width: 100px;
-  height: 50px;
-  background: rgb(5, 197, 240);
+  background-color: transparent;
+  width: 70px;
+  height: 70px;
   position: absolute;
-  border-radius: 20px;
+  border: none;
   top: 0px;
   right: 0px;
   cursor: pointer;
+}
+
+.close img{
+  height: 100%;
+  width: 100%;
 }
 video.down {
   height: 592px;
@@ -419,7 +424,7 @@ width: 355px;
   top: 0px;
   margin-top: 50px;
 }
-button:hover{
+button:not(.close):hover{
   background-color: black;
   color: white;
 }

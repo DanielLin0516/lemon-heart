@@ -64,6 +64,7 @@
         </el-col>
       </el-row>
     </div>
+    
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -222,7 +223,7 @@ img {
 }
 
 .regPage {
-  position: absolute;
+  position: fixed;
   top: 205px;
   left: 710px;
   width: 500px;

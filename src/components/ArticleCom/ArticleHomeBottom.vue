@@ -13,27 +13,27 @@
         <span class="ren">人</span>
         <span class="ge">格</span>
         <span class="xingge">看看你属于哪种性格</span>
-        <el-button class="button1" size="small" round>
+        <button class="button1" size="small" round>
           <div><router-link :to="{name: 'Test' }">去测试</router-link></div>
-        </el-button>
+        </button>
         <div>
           <img class="line2" src="../../assets/pictures/line1.png" alt="" />
         </div>
         <span class="jiao">焦</span>
         <span class="lv">虑测试</span>
         <span class="rensheng">别让焦虑摧毁你的人生</span>
-        <el-button class="button2" size="small" round>
+        <button class="button2" size="small" round>
           <div><router-link :to="{name: 'Test' }">去测试</router-link></div>
-        </el-button>
+        </button>
         <div>
           <img class="line3" src="../../assets/pictures/line1.png" alt="" />
         </div>
         <span class="yi">抑</span>
         <span class="yu">郁测试</span>
         <span class="zhuangtai">测测你的抑郁情绪状态</span>
-        <el-button class="button3" size="small" round>
+        <button class="button3" size="small" round>
           <div><router-link :to="{name: 'Test' }">去测试</router-link></div>
-        </el-button>
+        </button>
       </div>
       <div class="gengduo">
         <router-link :to="{name: 'Test' }">更多心理测试</router-link>
@@ -365,10 +365,17 @@ span.xinli {
   line-height: 130.765629%;
   margin-bottom: 36px;
 }
-.el-button:hover{
+button{
+width: 108px;
+  height: 40px;
+  border-radius: 20px;
+  border: 0.6px solid rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+}
+button:hover{
 background-color: black;
 }
-.el-button:hover a{
+button:hover a{
   color: white;
 }
 </style>

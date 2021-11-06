@@ -119,7 +119,7 @@ export default {
       if (document.getElementsByClassName("pictures-top")[0]) {
         header_height =
           document.getElementsByClassName("pictures-top")[0].offsetHeight;
-        header_height1 = document.getElementsByClassName("white")[0].offsetTop +400
+        header_height1 = document.getElementsByClassName("white")[0].offsetTop +380
       }
       //  console.log(
       //   "滚动的距离:" + scrolled,

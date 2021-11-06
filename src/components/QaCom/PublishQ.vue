@@ -183,6 +183,6 @@
   #relative {
     position: relative;
     top: 207px;
-    left: 1420px;
+    margin-left: 1420px;
   }
 </style>

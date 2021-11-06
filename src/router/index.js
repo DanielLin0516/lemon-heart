@@ -1,112 +1,137 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Article from '@/components/Article.vue'
-import Book from '@/components/Book.vue'
+import Article from '@/components/ArticleCom/Article.vue'
+import ArticleHome from '../components/ArticleCom/ArticleHome'
+import Articlezhichang from '../components/ArticleCom/Articlezhichang'
+import Articlekepu from '../components/ArticleCom/Articlekepu'
+import Articlehunlian from '../components/ArticleCom/Articlehunlian'
+import Articlejiating from '../components/ArticleCom/Articlejiating'
+import Articlerenji from '../components/ArticleCom/Articlerenji'
+import Articlejuecha from '../components/ArticleCom/Articlejuecha'
+import PassageDetail from '../components/ArticleCom/PassageDetail'
+import Book from '@/components/MoreCom/Book.vue'
 import Login from '@/components/Login.vue'
-import Qa from '@/components/Qa.vue'
+import Qa from '@/components/QaCom/Qa.vue'
 import Register from '@/components/Register.vue'
-import Test from '@/components/Test.vue'
+import Test from '@/components/TestCom/Test.vue'
 import Home from '@/components/Home.vue'
-import ArticleHome from '../pages/ArticleHome'
-import Articlezhichang from '../pages/Articlezhichang'
-import Articlekepu from '../pages/Articlekepu'
-import Articlehunlian from '../pages/Articlehunlian'
-import Articlejiating from '../pages/Articlejiating'
-import Articlerenji from '../pages/Articlerenji'
-import Articlejuecha from '../pages/Articlejuecha'
-import PassageDetail from '../components/PassageDetail'
-import Rengetest from '../pages/Rengetest.vue'
-import Rengeresult from '../pages/Rengeresult.vue'
+import QAndA from '@/components/QaCom/QAndA.vue'
+import PublishQ from '@/components/QaCom/PublishQ.vue'
+import UserPage from '@/components/UserCom/UserPage.vue'
+import Rengetest from '../components/TestCom/Rengetest.vue'
+import Rengeresult from '../components/TestCom/Rengeresult.vue'
+import cookie from '@/utils/cookie.js'
 
 Vue.use(VueRouter)
 
 
 const router = new VueRouter({
-  routes: [
-    {
-      path: '/',
-      component: Home,
-    },
-    {
-      path:'/Home',
-      component:Home,
-    },
-    {
-      path:'/Article',
-      component:Article,
-      // components:{
-      //   zujianqiehuan:ArticleHome
-      // },
-      children:[
+  routes: [{
+    path: '/',
+    component: Home,
+  },
+  {
+    path: '/Home',
+    component: Home,
+  },
+  {
+    path: '/Article',
+    component: Article,
+    children: [
       {
-        
-        path:'ArticleHome',
-        component:ArticleHome,
+        path: 'ArticleHome',
+        component: ArticleHome,
       },
       {
-        path:'Articlezhichang',
-        component:Articlezhichang,
+        path: 'Articlezhichang',
+        component: Articlezhichang,
       },
       {
-        path:'Articlekepu',
-        component:Articlekepu,
+        path: 'Articlekepu',
+        component: Articlekepu,
       },
       {
-        path:'Articlehunlian',
-        component:Articlehunlian,
+        path: 'Articlehunlian',
+        component: Articlehunlian,
       },
       {
-        path:'Articlejiating',
-        component:Articlejiating,
+        path: 'Articlejiating',
+        component: Articlejiating,
       },
       {
-        path:'Articlerenji',
-        component:Articlerenji,
+        path: 'Articlerenji',
+        component: Articlerenji,
       },
       {
-        path:'Articlejuecha',
-        component:Articlejuecha,
+        path: 'Articlejuecha',
+        component: Articlejuecha,
       }
     ]
-    },
-    {
-      name:'Book',
-      path:'Book',
-      component:Book,
-    },
-    {
-      path:'Qa',
-      component:Qa,
-    },
-    {
-      name:'Test',
-      path:'Test',
-      component:Test,
-    },
-    {
-      path:'Login',
-      component:Login,
-    },
-    {
-      path:'Register',
-      component:Register,
-    },
-    {
-      name:'PassageDetail',
-      path:'PassageDetail',
-      component:PassageDetail,
-    },
-    {
-      name:'Rengetest',
-      path:'Rengetest',
-      component:Rengetest,
-    },
-    {
-      name:'Rengeresult',
-      path:'Rengeresult',
-      component:Rengeresult,
+  },
+  {
+    name:'PassageDetail',
+    path:'PassageDetail',
+    component:PassageDetail,
+  },
+  {
+    name:'Book',
+    path: '/Book',
+    component: Book,
+  },
+  {
+    path: '/Qa',
+    component: Qa,
+  },
+  {
+    path: '/PublishQ',
+    component: PublishQ,
+  },
+  {
+    path: '/Qa/:id',
+    component: QAndA,
+  },
+  {
+    name:'Test',
+    path: '/Test',
+    component: Test,
+  },
+  {
+    name:'Rengetest',
+    path:'Rengetest',
+    component:Rengetest,
+  },
+  {
+    name:'Rengeresult',
+    path:'Rengeresult',
+    component:Rengeresult,
+  },
+  {
+    path: '/Login',
+    component: Login,
+  },
+  {
+    path: '/Register',
+    component: Register,
+  },
+  {
+    path: '/UserPage',
+    component: UserPage,
+  }
+  ],
+
+});
+
+// 路由守卫
+router.beforeEach(function (to, from, next) {
+  if (to.path == '/PublishQ') {
+    if (!cookie.getCookie('userName')) {
+      alert('请先登录');
+    } else {
+      next();
     }
-  ]
+  } else {
+    next();
+  }
 })
 
-export default router
+export default router;

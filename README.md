@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# lemon-heart
-=======
 # lemon-heart
 
 ## Project setup
@@ -20,4 +17,3 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
->>>>>>> 0747877 (axios获取文章完成)

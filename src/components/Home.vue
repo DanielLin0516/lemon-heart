@@ -1,7 +1,8 @@
 <template>
     <div>
+        <v-loading v-if="isLoading"></v-loading>
         <div class="lunbo">
-            <img src='@/assets/pictures/lunbo1.png'>
+            <img src='@/assets/pictures/info.gif' />
         </div>
         <div class="Catalogue">
             <div class="data">
@@ -26,7 +27,7 @@
             <div class="block2">
                 <span class="num">02</span>
                 <span class="link1">
-                    <router-link to='/Article/ArticleHome'>常见问题</router-link>
+                    <router-link to="/Article/ArticleHome">常见问题</router-link>
                 </span>
                 <span class="line1"></span>
                 <div class="test1">
@@ -66,86 +67,31 @@
         <div class="Epilogue">
             <div class="words">
                 <div class="words1">心灵需要慰藉，就像花草需要水分</div>
-                <router-link to='/Article/ArticleHome'>阅读精品文章</router-link>
+                <router-link to="/Article/ArticleHome">阅读精品文章</router-link>
                 <i class="el-icon-arrow-right"></i>
             </div>
-            <img class="Foots-up-img" src="@/assets/pictures/threecolors.png">
+            <img src="@/assets/pictures/threecolors.png">
         </div>
-        <div class="Foots">
-            <div class="lemon-logo">
-                <router-link to="/Home">
-                    <img src="../assets/pictures/Group_15.png" alt="">                    
-                </router-link>
-
-            </div>
-            <div class="bottom-text">
-                <router-link to="/Home">柠檬心理</router-link>
-            </div>
-            <div class="box1">
-                <div>
-                    <router-link to="/Article/ArticleHome" >精选文章</router-link>
-                </div>
-                <div>
-                    <router-link to="/Article/ArticleHome" >心理科普</router-link>
-                </div>
-                <div>
-                    <router-link to="/Article/ArticleHome" >人际社交</router-link>
-                </div>
-                <div>
-                    <router-link to="/Article/ArticleHome" >恋爱关系</router-link>
-                </div>
-            </div>
-            <div class="box2">
-                <div>
-                    <router-link to="/Qa" >心理问答</router-link>
-                </div>
-                <div>
-                    <router-link to="/Qa" >精彩问答</router-link>
-                </div>
-                <div>
-                    <router-link to="/Qa" >邀请解答</router-link>
-                </div>
-            </div>
-            <div class="box3">
-                <div>
-                    <router-link :to="{name: 'Test' }" >心理测试</router-link>
-                </div>
-                <div>
-                    <router-link :to="{name: 'Test' }" >焦虑度测试</router-link>
-                </div>
-                <div>
-                    <router-link :to="{name: 'Test' }" >自卑度测试</router-link>
-                </div>
-                <div>
-                    <router-link :to="{name: 'Test' }" >人格测试</router-link>
-                </div>
-            </div>
-            <div class="box4">
-                <div>
-                    <router-link :to="{name:'Book'}" >心理图书</router-link>
-                </div>
-                <div>
-                    <router-link :to="{name:'Book'}" >推荐图书</router-link>
-                </div>
-            </div>
-        </div>
+        <Foot></Foot>
     </div>
 </template>
 
 <script>
     export default {
-        name:'Home',
-        mounted() {
-            window.scrollTo(0,0)
+        name: 'Home',
+        data() {
+            return {
+                isLoading: true
+            }
         },
     }
 </script>
-
-<style scoped>
+<style lang="less" scoped>
     .lunbo {
         width: 1920px;
         height: 661px;
         border-bottom: 0.6px solid rgba(0, 0, 0, 1);
+        background-color: white;
     }
 
     .lunbo img {
@@ -313,94 +259,7 @@
         line-height: 130.765629%;
     }
 
-    .test{
+    .test {
         margin-bottom: 22px;
-    }
-
-    .Foots-up-img{
-        z-index: 1;
-    }
-     
-    .Foots{
-        width: 1920px;
-        height: 460px;
-        background-color: rgba(177, 243, 243, 1);;
-        position: relative;
-        top: -40px;
-    }
-    .lemon-logo img{
-        width:51px ;
-        position: absolute;
-        top:185.6px;
-        left: 175.9px;
-    }
-    .bottom-text{
-        position: absolute;
-        color: rgba(0, 0, 0, 1);
-        font-family: Alibaba PuHuiTi;
-        font-weight: 300;
-        font-size: 24px;
-        letter-spacing: 18%;
-        left: 232px;
-        top: 197px;
-    }
-    .bottom-text a{
-        color: rgba(0, 0, 0, 1);
-        font-family: Alibaba PuHuiTi;
-        font-weight: 300;
-        font-size: 24px;
-        letter-spacing: 18%;
-    }
-    .box1{
-        position: absolute;
-        left: 573px;
-        top: 140px;
-    }
-    .box1 a{
-        display: inline-block;
-        color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-bottom: 36px;
-    }
-    .box2{
-        position: absolute;
-        top: 140px;
-        left: 857px;
-    }
-    .box2 a{
-        display: inline-block;
-        color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-bottom: 36px;
-    }
-    .box3{
-        position: absolute;
-        top: 140px;
-        left: 1141px;
-    }
-    .box3 a{
-                display: inline-block;
-        color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-bottom: 36px;
-    }
-    .box4{
-        position: absolute;
-        top: 140px;
-        left: 1425px;
-    }
-    .box4 a{
-        display: inline-block;
-        color: rgba(0, 0, 0, 1);
-        font-family: FZBaoSong-Z04S;
-        font-size: 18px;
-        line-height: 130.765629%;
-        margin-bottom: 36px;
     }
 </style>

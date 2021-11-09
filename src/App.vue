@@ -1,5 +1,22 @@
 <template>
   <div>
+    <el-alert
+      v-show="queren"
+      :title="title"
+      type="success"
+      @close="hello"
+      show-icon
+    >
+    </el-alert>
+        <el-alert
+      v-show="fouren"
+      :title="ti"
+      type="error"
+      @close="hello"
+      show-icon
+    >
+    </el-alert>
+    <!-- <vue-canvas-nest :config="{color:'255,0,0', count: 500,zIndex: 1000,opacity: 1,}" :el="'body'"></vue-canvas-nest> -->
     <!--导航栏-->
     <div class="container" :style="{ background: containerBgc }">
       <el-row :gutter="10">
@@ -64,7 +81,7 @@
         </el-col>
       </el-row>
     </div>
-    
+
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
@@ -83,6 +100,7 @@
 </template>
 
 <script>
+// import vueCanvasNest from "vue-canvas-nest"
 import Article from "@/components/ArticleCom/Article.vue";
 import Book from "@/components/MoreCom/Book.vue";
 import Login from "@/components/Login.vue";
@@ -91,7 +109,6 @@ import Register from "@/components/Register.vue";
 import Test from "@/components/TestCom/Test.vue";
 import Home from "@/components/Home.vue";
 import UserHead from "@/components/UserCom/UserHead.vue";
-
 export default {
   data() {
     return {
@@ -102,10 +119,17 @@ export default {
       isVisible: false,
       comName: "",
       isLog: false,
+      queren: false,
+      title: "",
+      fouren:false,
+      ti:''
     };
   },
 
   methods: {
+    hello() {
+      this.queren = false;
+    },
     changeColor() {
       if (
         this.path == "/Home" ||
@@ -150,6 +174,41 @@ export default {
   created() {
     this.isLogin();
   },
+  mounted() {
+    this.$bus.$on("login", (title) => {
+      this.queren = true;
+      this.title = title;
+    });
+    this.$bus.$on("regist", (title) => {
+      this.queren = true;
+      this.title = title;
+    });
+    this.$bus.$on('ask',(title)=>{
+      this.fouren = true
+      this.ti = title
+    })
+    this.$bus.$on('empty',(title)=>{
+      this.fouren = true
+      this.ti = title
+    })
+    this.$bus.$on('send',(title)=>{
+      this.queren = true
+      this.title = title
+    })
+    this.$bus.$on('try',(title)=>{
+      this.fouren = true
+      this.ti = title
+    })
+    this.$bus.$on('again',(title)=>{
+      this.fouren = true
+      this.ti = title
+    })
+    this.$bus.$on('no',(title)=>{
+      this.fouren = true
+      this.ti = title
+    })
+
+  },
   //监听url变化
   watch: {
     $route(to, from) {
@@ -157,7 +216,11 @@ export default {
       this.changeColor();
     },
   },
-
+  beforeDestroy() {
+    this.$bus.$off("login");
+    this.$bus.$off("regist");
+    this.$bus.$off("ask");
+  },
   components: {
     Article: Article,
     Book: Book,
@@ -167,6 +230,7 @@ export default {
     Test: Test,
     Home: Home,
     UserHead: UserHead,
+    // vueCanvasNest
   },
 };
 </script>
@@ -177,6 +241,9 @@ export default {
   height: 80px;
   border-bottom: 0.6px solid rgba(0, 0, 0, 1);
   overflow: hidden;
+  position: fixed;
+  z-index: 999;
+  top: 0;
 }
 
 a {
@@ -242,5 +309,19 @@ img {
 .fade-leave-active {
   opacity: 0;
   transition: opacity 0.5s;
+}
+.el-alert--success.is-light {
+  position: fixed;
+  top: 100px;
+  width: 1400px;
+  left: 242px;
+  z-index: 1000;
+}
+.el-alert--error.is-light {
+  position: fixed;
+  top: 100px;
+  width: 1400px;
+  left: 242px;
+  z-index: 1000;
 }
 </style>

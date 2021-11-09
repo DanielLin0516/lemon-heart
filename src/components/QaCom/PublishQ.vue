@@ -32,6 +32,9 @@
         url2: '',
         url3: '',
         url4: '',
+        title:'标题或描述不能为空',
+        tit:'发布成功！',
+        ti:'发布失败，请重试！'
       }
     },
     components: {
@@ -43,7 +46,8 @@
       },
       pub() {
         if (this.askTitle == '' || this.askContent == '') {
-          alert('标题或描述不能为空')
+          this.$bus.$emit("empty",this.title)
+          // alert('标题或描述不能为空')
         } else {
           request({
             method: 'post',
@@ -56,13 +60,15 @@
             }
           }).then((response) => {
             if (response.data.status == true) {
-              alert('发布成功！')
+              this.$bus.$emit("send",this.tit)
+              // alert('发布成功！')
               this.askTitle = '';
               this.askContent = '';
               this.$router.replace('/Qa');
               location.reload();
             } else {
-              alert('发布失败，请重试！')
+              this.$bus.$emit("try",this.ti)
+              // alert('发布失败，请重试！')
             }
           })
         }

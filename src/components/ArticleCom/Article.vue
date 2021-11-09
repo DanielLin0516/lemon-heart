@@ -1,15 +1,30 @@
 <template>
   <div>
+        <div class="pic">
+      <vue-canvas-nest
+        :config="{
+          color: '0, 47, 167',
+          count: 300,
+          zIndex: 1000,
+          opacity: 0.7,
+          width: 300,
+          height: 300,
+        }"
+        :el="'.pic'"
+      ></vue-canvas-nest>
+    </div>
     <div class="pictures-top">
       <div class="square">
-        <img src="../../assets/pictures/Rectangle_25.png" alt="" />
+        <img v-lazy="require('../../assets/pictures/Rectangle_25.png')" />
       </div>
       <div class="pictures-text">
         <span>精选文章</span>
       </div>
       <div class="border-black">
         <div class="border-1">
-          <img src="../../assets/pictures/unsplash_Av_NirIguEc.png" alt="" />
+          <img
+            v-lazy="require('../../assets/pictures/unsplash_Av_NirIguEc.png')"
+          />
         </div>
         <div class="border-1-text">
           <span>致讨好型人格：你不必通过讨好换取爱</span>
@@ -19,7 +34,9 @@
         </div>
         <div class="border-2">
           <img
-            src="../../assets/pictures/思考图片素材IDVCG41pha295000017_1.png"
+            v-lazy="
+              require('../../assets/pictures/思考图片素材IDVCG41pha295000017_1.png')
+            "
             alt=""
           />
         </div>
@@ -31,8 +48,9 @@
         </div>
         <div class="border-3">
           <img
-            src="../../assets/pictures/思考图片素材IDVCG211128975283_1.png"
-            alt=""
+            v-lazy="
+              require('../../assets/pictures/思考图片素材IDVCG211128975283_1.png')
+            "
           />
         </div>
         <div class="border-3-text">
@@ -71,18 +89,18 @@
       >
         <router-link to="/Qa"
           ><div class="wenda1 wen">
-            {{this.random[0].questionTitile}}
+            {{ this.random[0].questionTitile }}
           </div></router-link
         >
       </transition>
       <router-link to="/Qa"
         ><div class="wenda2 wen">
-          {{this.random[1].questionTitile}}
+          {{ this.random[1].questionTitile }}
         </div></router-link
       >
       <router-link to="/Qa"
         ><div class="wenda3 wen">
-          {{this.random[2].questionTitile}}
+          {{ this.random[2].questionTitile }}
         </div></router-link
       >
     </div>
@@ -98,19 +116,22 @@
 </template>
 
 <script>
+import vueCanvasNest from "vue-canvas-nest";
 import "animate.css";
-import axios from 'axios';
+import axios from "axios";
 export default {
   name: "Article",
+  components: {vueCanvasNest},
   data() {
     return {
       yuanlaide: "yuanlai",
-      random:[],
+      random: [],
     };
   },
   methods: {
     onScroll() {
       // 计算滚动的距离
+
       let scrolled =
         document.documentElement.scrollTop || document.body.scrollTop;
       // 计算A区的高度
@@ -119,50 +140,64 @@ export default {
       if (document.getElementsByClassName("pictures-top")[0]) {
         header_height =
           document.getElementsByClassName("pictures-top")[0].offsetHeight;
-        header_height1 = document.getElementsByClassName("white")[0].offsetTop +380
+        header_height1 =
+          document.getElementsByClassName("white")[0].offsetTop + 380;
       }
       //  console.log(
       //   "滚动的距离:" + scrolled,
       //   "头部的高度:" + header_height,
       //   "下面的white高度:" + header_height1
-      // ); 
+      // );
       // 当滚动的距离等于A区的高度的时候，即是临界点，马上通过auto_fixed变量，给B区添加一个
       // class，让B区浮起来
-      if (scrolled >= header_height - 150) {
+      if (scrolled >= header_height - 130) {
         if (scrolled <= header_height1) {
           this.yuanlaide = "houlai";
           // console.log("1");
-        }else{
-        this.yuanlaide = "yuanlai";
-        // console.log("2");
-      } }else{
+        } else {
+          this.yuanlaide = "yuanlai";
+          // console.log("2");
+        }
+      } else {
         this.yuanlaide = "yuanlai";
         // console.log("2");
       }
+      // this.yuanlaide = 'yuanlai'
     },
   },
-  mounted() {
+  created() {
     this.$nextTick(function () {
       window.addEventListener("scroll", this.onScroll);
     });
-    axios.get('http://39.107.67.145:9000/question/listRandomThree').then(
-      response =>{
-        console.log('成功请求next',response.data.data)
-        this.random = response.data.data
-    },error => {
-      console.log('请求失败next',error)
-    })
+  },
+  mounted() {
+    axios.get("http://39.107.67.145:9000/question/listRandomThree").then(
+      (response) => {
+        console.log("成功请求next", response.data.data);
+        this.random = response.data.data;
+      },
+      (error) => {
+        console.log("请求失败next", error);
+      }
+    );
   },
 };
 </script>
 
 <style scoped>
+.pic{
+  width: 1920px;
+  height: 1000px;
+  position: fixed;
+  top: 0;
+}
 .animate__bounceOutLeft {
   animation-duration: 0.3s;
 }
 .pictures-top {
   height: 950px;
   position: relative;
+  margin-top: 80px;
 }
 .square img {
   position: absolute;

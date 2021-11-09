@@ -5,9 +5,9 @@
             <div id="qatitle">{{title}}</div>
             <div id="qabady">{{content}}</div>
             <div id="commentNum">{{comNum}}</div>
-            <img id="commentPic" src="@/assets/pictures/comment.png">
+            <img id="commentPic" v-lazy='require("@/assets/pictures/comment.png")'>
             <div id="likeNum">{{likeNum}}</div>
-            <img id="likePic" src="@/assets/pictures/like.png">
+            <img id="likePic" v-lazy='require("@/assets/pictures/like.png")'>
             <div id="date">{{date}}</div>
             <div></div>
         </div>

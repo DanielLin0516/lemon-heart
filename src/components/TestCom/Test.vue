@@ -1,11 +1,25 @@
 <template>
   <div>
+
+    <el-alert
+      v-show="queren"
+      :title="title"
+      type="error"
+      @close="hello"
+      show-icon
+    >
+    </el-alert>
+
     <!-- 图片 -->
     <div class="up">
-      <img class="upimage" src="../..\assets\pictures\心理测试背景.gif" alt="" />
+      <img
+        class="upimage"
+        src="../../assets/pictures/心理测试背景.gif"
+        alt=""
+      />
     </div>
     <!-- 表格 -->
-    <div>
+    <div class="heihei">
       <div class="form">
         <div class="form_up">
           <div class="renge"><span>人</span>格测试</div>
@@ -55,7 +69,11 @@
     </div>
     <!-- 关于心理测试 -->
     <div class="xuanchuan">
-      <img class="bimage" src="../..\assets\pictures\threecolors.png" alt="" />
+      <img
+        class="bimage"
+        v-lazy="require('../../assets/pictures/threecolors.png')"
+        alt=""
+      />
       <div class="centerblock">
         <div class="guanyu">关于心理测试</div>
         <div class="liaojie">柠檬心理提供多方面的测试来使你更了解你自己</div>
@@ -72,33 +90,44 @@ import ArticledetailBottom from "../../components/ArticleCom/ArticledetailBottom
 export default {
   name: "Test",
   components: { ArticledetailBottom },
-  methods:{
-    lala(){
-      if(this.$cookies.isKey("userName")){
-        this.$router.push({ name: 'Rengetest'})
-      }else{
-        alert('请先登录用户！！')
-        this.$router.push({ name: 'Test'})
+  data() {
+    return {
+      queren: false,
+      title:''
+    };
+  },
+  methods: {
+    lala() {
+      if (this.$cookies.isKey("userName")) {
+        this.$router.push({ name: "Rengetest" });
+      } else {
+        this.queren = true
+        this.title = '请先登录！'
+        this.$router.push({ name: "Test" });
       }
-
-    }
+    },
+    hello() {
+      this.quren = false;
+    },
   },
   mounted() {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   },
 };
 </script>
 
 <style scoped>
 .upimage {
+  margin-top: 80px;
   height: 100%;
   width: 100%;
 }
 .up {
   height: 439px;
 }
+
 .form {
-  margin: 100px auto;
+  margin: 180px auto;
   width: 1400px;
   height: 1144px;
   /* background-color: darkkhaki; */
@@ -331,5 +360,13 @@ span {
 .foots {
   margin-left: 0;
   margin-top: -53px;
+}
+
+.el-alert--error.is-light {
+  position: fixed;
+  top: 100px;
+  width: 1400px;
+  left: 242px;
+  z-index: 1000;
 }
 </style>

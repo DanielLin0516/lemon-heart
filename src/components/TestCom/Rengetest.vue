@@ -1,15 +1,15 @@
 <template>
   <div>
     <div class="up-img">
-      <img src="../..\assets\pictures\人格测试gif1.gif" alt="">
+      <img v-lazy='require("../../assets/pictures/人格测试gif1.gif")' alt="">
     </div>
     <div class="middle-img" :class="yuanlaide">
-      <img src="../..\assets\pictures\人格测试动图背景.gif" alt="">
+      <img v-lazy='require("../../assets/pictures/人格测试动图背景.gif")' alt="">
     </div>
     <div class="center-Qa">
         <div class="up">
-          <div class="clock"><img src="../..\assets\pictures\Time_Machine.png" alt=""></div>
-          <span class="time">预计时间：3分钟</span>
+          <div class="clock"><img v-lazy='require("../../assets/pictures/Time_Machine.png")' alt=""></div>
+          <span class="time">预计时间：5分钟</span>
         </div>
         <div class="fuhe">
           <span yinsi>请尽量选择符合和不符合，并且选择你最真实的情况，我们会保护你的隐私</span>
@@ -79,6 +79,7 @@ export default {
 <style scoped>
 .up-img{
   height: 439px;
+  margin-top: 80px;
 }
 img{
   height: 100%;

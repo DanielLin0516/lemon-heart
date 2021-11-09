@@ -3,11 +3,11 @@
     <div class="white"></div>
     <div class="background">
       <div>
-        <img class="center" src="../../assets/pictures/Rectangle_25.png" alt="" />
+        <img class="center" v-lazy='require("../../assets/pictures/Rectangle_25.png")' alt="" />
       </div>
       <span class="xinli">心理测试</span>
       <div>
-        <img class="line1" src="../../assets/pictures/line1.png" alt="" />
+        <img class="line1" v-lazy='require("../../assets/pictures/line1.png")' alt="" />
       </div>
       <div>
         <span class="ren">人</span>
@@ -17,7 +17,7 @@
           <div><router-link :to="{name: 'Test' }">去测试</router-link></div>
         </button>
         <div>
-          <img class="line2" src="../../assets/pictures/line1.png" alt="" />
+          <img class="line2" v-lazy='require("../../assets/pictures/line1.png")' alt="" />
         </div>
         <span class="jiao">焦</span>
         <span class="lv">虑测试</span>
@@ -26,7 +26,7 @@
           <div><router-link :to="{name: 'Test' }">去测试</router-link></div>
         </button>
         <div>
-          <img class="line3" src="../../assets/pictures/line1.png" alt="" />
+          <img class="line3" v-lazy='require("../../assets/pictures/line1.png")' alt="" />
         </div>
         <span class="yi">抑</span>
         <span class="yu">郁测试</span>
@@ -43,7 +43,7 @@
     <div class="Foots">
       <div class="lemon-logo">
         <router-link to="/Home">
-          <img src="../../assets/pictures/Group_15.png" alt="" />
+          <img v-lazy='require("../../assets/pictures/Group_15.png")' alt="" />
         </router-link>
       </div>
       <div class="bottom-text">

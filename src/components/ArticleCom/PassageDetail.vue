@@ -1,5 +1,30 @@
 <template>
   <div>
+    <div class="pic">
+      <vue-canvas-nest
+        :config="{
+          color: '0, 47, 167',
+          count: 300,
+          zIndex: 1000,
+          opacity: 0.7,
+          width: 300,
+          height: 300,
+        }"
+        :el="'.pic'"
+      ></vue-canvas-nest>
+    </div>
+    <el-alert v-show="hahaha" :title="ti" type="error" @close="down" show-icon>
+    </el-alert>
+
+    <el-alert
+      v-show="lalala"
+      :title="title"
+      type="warning"
+      @close="hello"
+      show-icon
+    >
+    </el-alert>
+
     <div class="heihei">
       <div class="jingxuan">精选文章</div>
       <i class="el-icon-arrow-right"></i>
@@ -9,11 +34,11 @@
         <div class="number">
           {{ n }}
           <div class="heart">
-            <img src="../../assets/pictures/关注_1.png" alt="" />
+            <img v-lazy="require('../../assets/pictures/关注_1.png')" alt="" />
           </div>
         </div>
         <div class="image1">
-          <img src="../../assets/pictures/image1.png" alt="" />
+          <img v-lazy="require('../../assets/pictures/image1.png')" alt="" />
         </div>
         <div v-for="cont in content" :key="cont.id" class="content">
           {{ cont }}
@@ -22,17 +47,18 @@
         <button @click="pressLike" class="dianzan">
           <img
             class="img1"
-            src="../../assets/pictures/clarity_heart-line.png"
+            v-lazy="require('../../assets/pictures/clarity_heart-line.png')"
           /><span>{{ n }}</span
           ><img
             class="img2"
-            src="../../assets/pictures/clarity_heart-solid.png"
+            v-lazy="require('../../assets/pictures/clarity_heart-solid.png')"
             alt=""
           />
         </button>
         <ArticledetailBottom />
       </div>
     </div>
+
     <!-- 导航栏 -->
     <div>
       <div class="title" :class="yuanlaide">
@@ -60,17 +86,22 @@
 </template>
 
 <script>
+import vueCanvasNest from "vue-canvas-nest";
 import axios from "axios";
 import ArticledetailBottom from "../../components/ArticleCom/ArticledetailBottom.vue";
 export default {
   name: "PassageDetail",
-  components: { ArticledetailBottom },
+  components: { ArticledetailBottom, vueCanvasNest },
   data() {
     return {
       yuanlaide: "yuanlai",
       content: "",
       n: 0,
       Inf: [],
+      lalala: false,
+      hahaha: false,
+      title: "",
+      ti: "",
     };
   },
   methods: {
@@ -113,7 +144,7 @@ export default {
         header_height =
           document.getElementsByClassName("image1")[0].offsetHeight;
         header_height1 =
-          document.getElementsByClassName("Foots")[0].offsetTop - 250;
+          document.getElementsByClassName("Foots")[0].offsetTop - 350;
       }
       //  console.log(
       //   "滚动的距离:" + scrolled,
@@ -145,7 +176,8 @@ export default {
               this.$route.query.passageTitle
           )
         ) {
-          alert("一个用户最多点一次赞！请勿重复点赞");
+          this.lalala = true;
+          this.title = "一个用户最多点一次赞！请勿重复点赞";
         } else {
           axios
             .get("http://39.107.67.145:9000/passage/pressLike", {
@@ -156,7 +188,6 @@ export default {
             .then(
               (response) => {
                 this.n = response.data.data;
-                console.log("点赞请求成功", response.data.data);
               },
               (error) => {
                 console.log("请求失败", error);
@@ -170,8 +201,15 @@ export default {
           );
         }
       } else {
-        alert("请登录账号");
+        this.hahaha = true;
+        this.ti = "请登录账号！";
       }
+    },
+    hello() {
+      this.lalala = false;
+    },
+    down() {
+      this.hahaha = false;
     },
   },
   mounted() {
@@ -180,7 +218,7 @@ export default {
     this.$nextTick(function () {
       window.addEventListener("scroll", this.onScroll);
     });
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   },
   created() {
     axios
@@ -202,13 +240,27 @@ export default {
 </script>
 
 <style scoped>
+body html {
+  height: 100%;
+  width: 100%;
+}
+.pic{
+  width: 1920px;
+  height: 1000px;
+  position: fixed;
+  top: 0;
+}
+div {
+  background-color: opacity;
+}
 .heihei {
   position: relative;
-  height: 1000px;
+  height: 2500px;
   width: 913px;
   background-color: opacity;
-  left: 242px;
-  top: 80px;
+  margin-left: 242px;
+  top: 160px;
+  display: flex;
 }
 .jingxuan {
   width: 96px;
@@ -280,6 +332,7 @@ export default {
 }
 .content {
   width: 100%;
+  /* height: 24px; */
   font-family: PingFang-Regular;
   font-size: 24px;
   margin-top: 25px;
@@ -352,5 +405,19 @@ export default {
   width: 21.3px;
   height: 19.2px;
   display: none;
+}
+.el-alert--warning.is-light {
+  position: fixed;
+  top: 100px;
+  width: 1400px;
+  left: 242px;
+  z-index: 1000;
+}
+.el-alert--error.is-light {
+  position: fixed;
+  top: 100px;
+  width: 1400px;
+  left: 242px;
+  z-index: 1000;
 }
 </style>

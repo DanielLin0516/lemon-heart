@@ -40,7 +40,7 @@
               },
             }"
           >
-            <img :src="Info.passageImg" class="image multi-content" style="width:11.5vw"/>
+            <img v-lazy="Info.passageImg" class="image multi-content" style="width:11.5vw"/>
           </router-link>
           <div style="padding: 14px">
           <router-link
@@ -115,6 +115,9 @@ export default {
     this.pagenow = newArray;
     });
   },
+  beforeDestroy(){
+    this.$bus.$off('sendNewArray')
+  }
 };
 </script>
 <style>

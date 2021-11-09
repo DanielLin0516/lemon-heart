@@ -62,6 +62,9 @@ export default {
       this.total =this.Infs.pages ;
     });
   },
+  // beforeDestroy(){
+  //   this.$bus.$off('getInf')
+  // }
 };
 </script>
 

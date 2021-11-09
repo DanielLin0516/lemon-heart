@@ -1,7 +1,9 @@
 <template>
   <div class="div1">
+ 
 
     <p></p>
+    
     <el-skeleton style="width: 400px" :loading="loading" animated :count="6">
       <template slot="template">
         <el-skeleton-item
@@ -42,7 +44,7 @@
             }"
           >
             <img
-              :src="Info.passageImg"
+              v-lazy="Info.passageImg"
               class="image multi-content"
               style="width: 11.5vw"
             />
@@ -80,6 +82,7 @@
 </template>
 
 <script>
+
 import axios from "axios";
 import ArticleHomeBottom from "../../components/ArticleCom/ArticleHomeBottom.vue";
 import NextPage from "../../components/ArticleCom/NextPage.vue";

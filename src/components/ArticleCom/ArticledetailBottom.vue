@@ -2,7 +2,7 @@
     <div class="Foots">
       <div class="lemon-logo">
         <router-link to="/Home">
-          <img src="../../assets/pictures/Group_15.png" alt="" />
+          <img v-lazy='require("../../assets/pictures/Group_15.png")' alt="" />
         </router-link>
       </div>
       <div class="bottom-text">

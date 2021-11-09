@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div class="fix">
             <transition
         name="animate__animated animate__bounce"
@@ -16,7 +17,7 @@
       ></video>
       </transition>
 
-      <button class="close" @click="turndown" v-show="one"><img src="../..\assets\pictures\Group 189.png" alt=""></button>
+      <button class="close" @click="turndown" v-show="one"><img v-lazy='require("../../assets/pictures/Group 189.png")' alt=""></button>
     </div>
     <div v-show="!one">
       <div class="middle">
@@ -30,12 +31,12 @@
         autoplay
       ></video>
       <div class="square">
-        <img src="../../assets\pictures\Rectangle_25.png" alt="" />
+        <img v-lazy='require("../../assets/pictures/Rectangle_25.png")' alt="" />
       </div>
       <div class="pub">推荐图书</div>
       <div class="box">
         <div class="box1 same">
-          <img src="../../assets\pictures\Group_167.png" alt="" />
+          <img v-lazy='require("../../assets/pictures/Group_167.png")' alt="" />
           <div class="right">
             <div class="first">被讨厌的勇气</div>
             <div class="second">克服你内心的自卑，不再为琐事烦恼</div>
@@ -54,7 +55,7 @@
           </div>
         </div>
         <div class="box2 same">
-          <img src="../../assets\pictures\Group_168.png" alt="" />
+          <img v-lazy='require("../../assets/pictures/Group_168.png")' alt="" />
           <div class="right">
             <div class="first">爱的艺术</div>
             <div class="second">恋爱也是一种艺术</div>
@@ -73,7 +74,7 @@
           </div>
         </div>
         <div class="box3 same">
-          <img src="../../assets\pictures\Group_168_1.png" alt="" />
+          <img v-lazy='require("../../assets/pictures/Group_168_1.png")' alt="" />
           <div class="right">
             <div class="first">心流</div>
             <div class="second">沉浸其中，忘记自我</div>
@@ -93,28 +94,28 @@
         </div>
       </div>
       <div class="square">
-        <img src="../../assets\pictures\Rectangle_25.png" alt="" />
+        <img v-lazy='require("../../assets/pictures/Rectangle_25.png")' alt="" />
       </div>
       <div class="t-v">推荐视频</div>
       <div class="middle-box">
         <div class="v1">
-          <a href="https://www.bilibili.com/video/BV1t4411u7Tz/?spm_id_from=333.788.recommend_more_video.0"><img  class="m1" src="../../assets\pictures\image_4.png" alt=""></a>
+          <a href="https://www.bilibili.com/video/BV1t4411u7Tz/?spm_id_from=333.788.recommend_more_video.0"><img  class="m1" v-lazy='require("../../assets/pictures/image_4.png")' alt=""></a>
           <span>为什么你总是无法专心学习和工作？</span>
         </div>
         <div class="v2">
-          <a href="https://www.bilibili.com/video/BV1aE411p72r/?spm_id_from=333.788.recommend_more_video.6"><img  class="m1" src="../../assets\pictures\image_5.png" alt=""></a>
+          <a href="https://www.bilibili.com/video/BV1aE411p72r/?spm_id_from=333.788.recommend_more_video.6"><img  class="m1" v-lazy='require("../../assets/pictures/image_5.png")' alt=""></a>
           <span>总是逃避各种事情？你比想象的更强大！</span>
         </div>
         <div class="v3">
-          <a href="https://www.bilibili.com/video/BV1o54y1a7QU"><img  class="m1" src="../../assets\pictures\image_6.png" alt=""></a>
+          <a href="https://www.bilibili.com/video/BV1o54y1a7QU"><img  class="m1" v-lazy='require("../../assets/pictures/image_6.png")' alt=""></a>
           <span>爱情的秘诀，不是讲道理</span>
         </div>
         <div class="v4">
-          <a href="https://www.bilibili.com/video/BV1L4411w7yK"><img  class="m1" src="../../assets\pictures\image_4_1.png" alt=""></a>
+          <a href="https://www.bilibili.com/video/BV1L4411w7yK"><img  class="m1" v-lazy='require("../../assets/pictures/image_4_1.png")' alt=""></a>
           <span>好人真的一生平安？学会残忍，是你的保障</span>
         </div>
         <div class="v5">
-          <a href="https://www.bilibili.com/video/BV1yT4y1P7Pf/?spm_id_from=333.788.recommend_more_video.9"><img  class="m1" src="../../assets\pictures\image_4_2.png" alt=""></a>
+          <a href="https://www.bilibili.com/video/BV1yT4y1P7Pf/?spm_id_from=333.788.recommend_more_video.9"><img  class="m1" v-lazy='require("../../assets/pictures/image_4_2.png")' alt=""></a>
           <span>不要再浪费眼前的时间和机会</span>
         </div>
         <div class="v6">
@@ -123,13 +124,13 @@
       </div>
       
       <div class="square">
-        <img src="../../assets\pictures\Rectangle_25.png" alt="" />
+        <img v-lazy='require("../../assets/pictures/Rectangle_25.png")' alt="" />
       </div>
       <div class="FM">推荐FM</div>
       <div class="bottom">
         <img
           class="image"
-          src="../../assets\pictures\壹心理-世界和我爱着你_1.png"
+          v-lazy='require("../../assets/pictures/壹心理-世界和我爱着你_1.png")'
           alt=""
         />
         <div class="title">
@@ -163,10 +164,17 @@ export default {
 </script>
 
 <style scoped>
+.pic{
+  width: 1920px;
+  height: 1000px;
+  position: fixed;
+  top: 0;
+}
 video.up {
   width: 1920px;
-  position: absolute;
+  position: fixed;
   top: 0px;
+  z-index: 1000;
 }
 .close {
   background-color: transparent;
@@ -177,6 +185,7 @@ video.up {
   top: 0px;
   right: 0px;
   cursor: pointer;
+  z-index: 1000;
 }
 
 .close img{

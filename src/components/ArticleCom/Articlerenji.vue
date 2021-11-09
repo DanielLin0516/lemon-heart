@@ -41,7 +41,7 @@
             }"
           >
             <img
-              :src="Info.passageImg"
+              v-lazy="Info.passageImg"
               class="image multi-content"
               style="width: 11.5vw"
             />

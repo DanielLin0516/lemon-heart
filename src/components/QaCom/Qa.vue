@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="top1">
-        <img src="@/assets/pictures/qaBgimg.gif">
+        <img v-lazy='require("@/assets/pictures/qaBgimg.gif")'>
         <div>
           <router-link to='/PublishQ' id="ask">
             提问
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="top2">
-      <img src="@/assets/pictures/Rectangle_25.png" id="img1">
+      <img v-lazy='require("@/assets/pictures/Rectangle_25.png")' id="img1">
       <div id="title1">精选问答</div>
       <div id="line1"></div>
       <router-link :to="'/Qa/'+text[0].id" id="text0">
@@ -121,6 +121,7 @@
 
 <style lang="less" scoped>
   .container {
+    margin-top: 80px;
     width: 1920px;
   }
 

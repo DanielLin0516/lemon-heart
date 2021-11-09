@@ -26,12 +26,9 @@
       </div>
     </div>
 
-      
-
-      <router-link :to="{ name: 'Rengeresult' }">
-        <button class="send" @click="count">查看分析</button></router-link
-      >
-
+    <router-link :to="{ name: 'Rengeresult' }">
+      <button class="send" @click="count">查看分析</button></router-link
+    >
   </div>
 </template>
 
@@ -251,7 +248,9 @@ export default {
     };
   },
   methods: {
+    
     count() {
+      
       this.shenjingzhi =
         parseInt(this.test[0].answer) +
         parseInt(this.test[5].answer) +
@@ -297,20 +296,23 @@ export default {
         parseInt(this.test[29].answer) +
         parseInt(this.test[34].answer) +
         parseInt(this.test[39].answer);
-      this.$bus.$emit(
-        "score",
-        this.shenjingzhi,
-        this.yanjinxing,
-        this.yirenxing,
-        this.kaifangxing,
-        this.waixiangxing
-      );
+        let _this = this;
+        setTimeout(function(){
+          _this.$bus.$emit(
+              "score",
+              _this.shenjingzhi,
+              _this.yanjinxing,
+              _this.yirenxing,
+              _this.kaifangxing,
+              _this.waixiangxing,
+              console.log("从组件发出数据", _this.shenjingzhi)
+            );
+        },800);
+      
     },
   },
 
-  beforeDestroy() {
-    this.count();
-  },
+
 };
 </script>
 

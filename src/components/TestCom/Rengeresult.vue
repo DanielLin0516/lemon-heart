@@ -177,6 +177,7 @@ export default {
           this.yirenxing = yirenxing;
           this.kaifangxing = kaifangxing;
           this.waixiangxing = waixiangxing;
+          console.log(this.shenjingzhi,this.yanjinxing,this.yirenxing)
           this.caculate();
           this.say();
         }
@@ -229,17 +230,14 @@ export default {
           "你性格内向，缄默和恬静， 喜欢独处，独立活动，社交范围一般局限于少部分亲密的朋友。";
       }
     },
-    say() {
-      this.total =
-        this.shensay + this.yansay + this.yisay + this.kaisay + this.waisay;
-    },
+  say() {
+    this.total =
+      this.shensay + this.yansay + this.yisay + this.kaisay + this.waisay;
+  },
   },
   created() {
-    this.recieve();
-    this.xing = this.$cookies.get('userName')
-  },
-  beforeDestroy() {
-    this.$bus.$off("score");
+     this.xing = this.$cookies.get('userName') ,
+     this.recieve();
   },
   mounted() {
     window.scrollTo(0,0);
@@ -254,7 +252,6 @@ export default {
   margin-top: 117px;
 }
 .name {
-  width: 113px;
   height: 45px;
   color: rgba(0, 0, 0, 1);
   font-family: FZBaoSong-Z04S;

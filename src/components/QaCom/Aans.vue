@@ -1,7 +1,7 @@
 <template>
     <div id="container">
         <div id="line"></div>
-        <img src="@/assets/pictures/infoHead2.png" id="img1">
+        <img v-lazy='require("@/assets/pictures/infoHead2.png")' id="img1">
         <div id="name">{{name}}</div>
         <div id="date">{{date}}</div>
         <div id="text">{{text}}</div>

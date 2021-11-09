@@ -125,7 +125,7 @@ const router = new VueRouter({
 router.beforeEach(function (to, from, next) {
   if (to.path == '/PublishQ') {
     if (!cookie.getCookie('userName')) {
-      alert('请先登录');
+      alert('请先登录')
     } else {
       next();
     }

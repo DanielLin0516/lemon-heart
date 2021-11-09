@@ -1,13 +1,13 @@
 <template>
   <div id="container">
     <div id='title'>{{title}}</div>
-    <img src="@/assets/pictures/infoHead.png" id="img1">
+    <img v-lazy='require("@/assets/pictures/infoHead.png")' id="img1">
     <div id="name">{{name}}</div>
     <div id="date">{{date}}</div>
     <div id="text">{{text}}</div>
     <div class="hoverIt">
       <div id="like" @click="likeIt" :style="{'background':bgc1}">
-        <img id="img2" :src="img2Src">
+        <img id="img2" v-lazy="img2Src">
         <div id="likeNum" :style="{'color':color1}">{{likeNum}}</div>
       </div>
     </div>
@@ -37,6 +37,8 @@
         img2Src: like1,
         bgc1: 'rgba(255, 255, 255, 1)',
         color1: 'rgba(71, 71, 71, 1)',
+        title:'请先登录！',
+        tit:'你已经点过赞了哦'
       }
     },
     props: {
@@ -50,7 +52,8 @@
     methods: {
       likeIt() {
         if (!this.cookie.getCookie('userName')) {
-          alert('请先登录')
+          this.$bus.$emit('ask',this.title)
+          // alert('请先登录')
         } else if (this.canLike) {
           request({
             method: 'post',
@@ -66,7 +69,8 @@
             this.canLike = false;
           }))
         } else {
-          alert('你已经点过赞了噢~')
+          this.$bus.$emit('again',this.tit)
+          // alert('你已经点过赞了噢~')
         }
       },
       ansing() {

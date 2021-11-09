@@ -1,6 +1,5 @@
 <template>
     <div>
-        <v-loading v-if="isLoading"></v-loading>
         <div class="lunbo">
             <img src='@/assets/pictures/info.gif' />
         </div>
@@ -8,7 +7,7 @@
             <div class="data">
                 <div class="month">10<span class="month1">月</span></div>
                 <div class="day">20<span class="day1">日</span></div>
-                <img src="@/assets/pictures/data.png">
+                <img v-lazy='require("@/assets/pictures/data.png")'>
             </div>
             <div class="text1">生活没有你想的那么糟</div>
             <div class="block1">
@@ -70,7 +69,7 @@
                 <router-link to="/Article/ArticleHome">阅读精品文章</router-link>
                 <i class="el-icon-arrow-right"></i>
             </div>
-            <img src="@/assets/pictures/threecolors.png">
+            <img v-lazy='require("@/assets/pictures/threecolors.png")'>
         </div>
         <Foot></Foot>
     </div>
@@ -79,10 +78,8 @@
 <script>
     export default {
         name: 'Home',
-        data() {
-            return {
-                isLoading: true
-            }
+        mounted() {
+                window.scrollTo(0,0);
         },
     }
 </script>

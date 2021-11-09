@@ -4,7 +4,7 @@
       <vue-canvas-nest
         :config="{
           color: '0, 47, 167',
-          count: 300,
+          count: 100,
           zIndex: 1000,
           opacity: 0.7,
           width: 300,

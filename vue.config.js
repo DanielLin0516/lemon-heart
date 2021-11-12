@@ -26,34 +26,17 @@ module.exports={
           }
         }
       } ,
-      chainWebpack: (config) => {
-
-        /* 添加分析工具 */
-    
+      configureWebpack: () => {
         if (process.env.NODE_ENV === 'production') {
-    
-          config
-    
-            .plugin('webpack-bundle-analyzer')
-    
-            .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
-    
-        } else {
-    
-        }
-    
-      }  ,
-      configureWebpack: (config) => {
-        if (process.env.NODE_ENV === 'production') {
-            // 为生产环境修改配置...
-            config.mode = 'production'
-            return {
-                plugins: [new CompressionPlugin({
-                    test: /\.js$|\.html$|\.css/, //匹配文件名
-                    threshold: 10240, //对超过10k的数据进行压缩
-                    deleteOriginalAssets: false //是否删除原文件
-                })]
-            }
-        }
-      }
+         return {
+           plugins: [
+             new CompressionPlugin({
+               test: /\.js$|\.html$|\.css$|\.jpg$|\.jpeg$|\.png/, // 需要压缩的文件类型
+               threshold: 10240, // 归档需要进行压缩的文件大小最小值，我这个是10K以上的进行压缩
+               deleteOriginalAssets: false // 是否删除原文件
+             })
+           ]
+         }
+       }
+     }
 }

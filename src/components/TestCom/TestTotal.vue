@@ -308,9 +308,9 @@ export default {
               console.log("从组件发出数据", _this.shenjingzhi)
             );
         },800);
-      
     },
   },
+  
 
 
 };

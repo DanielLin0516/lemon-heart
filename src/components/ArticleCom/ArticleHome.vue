@@ -51,6 +51,7 @@
           </router-link>
           <div style="padding: 14px">
             <router-link
+              target="_blank"
               :to="{
                 name: 'PassageDetail',
                 query: {
